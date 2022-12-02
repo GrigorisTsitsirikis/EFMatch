@@ -1,0 +1,26 @@
+[
+  {
+    "Description": "OSFP-PAO",
+    "MatchDate": "2021-05-19",
+    "MatchTime": "12:00",
+    "TeamA": "OSFP",
+    "TeamB": "PAO",
+    "Sport": 1
+  },
+  {
+    "Description": "OSFP-AEK",
+    "MatchDate": "2021-05-19",
+    "MatchTime": "12:00",
+    "TeamA": "OSFP",
+    "TeamB": "AEK",
+    "Sport": 1
+  },
+  {
+    "Description": "OSFP-AEK",
+    "MatchDate": "2021-05-19",
+    "MatchTime": "12:00",
+    "TeamA": "OSFP",
+    "TeamB": "AEK",
+    "Sport": 2
+  }
+]
