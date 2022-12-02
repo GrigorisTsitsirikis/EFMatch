@@ -5,6 +5,7 @@ CREATE TABLE [dbo].[Match] (
     [MatchTime]   NVARCHAR (50)  NOT NULL,
     [TeamA]       NVARCHAR (100) NOT NULL,
     [TeamB]       NVARCHAR (100) NOT NULL,
+    [Sport]		  INT NOT NULL DEFAULT 0, 
     CONSTRAINT [PK_Match] PRIMARY KEY CLUSTERED ([ID] ASC)
 );
 
