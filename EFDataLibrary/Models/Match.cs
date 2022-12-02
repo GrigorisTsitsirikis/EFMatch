@@ -7,6 +7,11 @@ using System.Text;
 
 namespace EFDataLibrary.Models
 {
+    public enum Sports
+    {
+        Voleyball, Football, Basketball
+    }
+
     public class Match
     {
         public int ID { get; set; }
@@ -29,6 +34,7 @@ namespace EFDataLibrary.Models
         [MaxLength(100)]
         public string TeamB { get; set; }
 
-        public enum Sport { Voleyball,Football,Basketball }
+        [Required]
+        public Sports Sport { get; set; }
     }
 }

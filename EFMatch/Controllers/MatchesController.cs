@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using EFDataLibrary.DataAccess;
@@ -76,6 +77,16 @@ namespace EFMatch.Controllers
         [HttpPost]
         public async Task<ActionResult<Match>> PostMatch(Match Match)
         {
+            var sameMatch = _context.Match.Where(x => x.TeamA == Match.TeamA
+            && x.TeamB == Match.TeamB
+            && x.Sport == Match.Sport
+            && x.MatchDate == Match.MatchDate).FirstOrDefault();
+
+            if (sameMatch != null)
+            {
+                throw new DataException("This match already exists. Please alter it with Put method");
+            }
+
             _context.Match.Add(Match);
             await _context.SaveChangesAsync();
             return CreatedAtAction("GetMatch", new { id = Match.ID }, Match);

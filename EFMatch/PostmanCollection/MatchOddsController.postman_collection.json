@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "MatchOdds (OK)",
+			"name": "MatchOdds",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -24,7 +24,7 @@
 			"response": []
 		},
 		{
-			"name": "MatchOdds/{id} (OK)",
+			"name": "MatchOdds/{id}",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -98,7 +98,7 @@
 			"response": []
 		},
 		{
-			"name": "MatchOdds/{id} (OK)",
+			"name": "MatchOdds/{id}",
 			"request": {
 				"method": "DELETE",
 				"header": [],

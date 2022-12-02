@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Matches (OK)",
+			"name": "Matches",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -24,7 +24,7 @@
 			"response": []
 		},
 		{
-			"name": "Matches/{id} (OK)",
+			"name": "Matches/{id}",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -43,13 +43,13 @@
 			"response": []
 		},
 		{
-			"name": "Matches (OK)",
+			"name": "Matches",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"description\": \"OSFP-PAO\",\r\n        \"matchDate\": \"2012-04-23\",\r\n        \"matchTime\": \"12:00\",\r\n        \"teamA\": \"OSFP\",\r\n        \"teamB\": \"PAO\"\r\n}",
+					"raw": "{\r\n        \"description\": \"OSFP-PAO\",\r\n        \"matchDate\": \"2012-04-23\",\r\n        \"matchTime\": \"12:00\",\r\n        \"teamA\": \"OSFP\",\r\n        \"teamB\": \"PAO\",\r\n        \"sport\":1\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -70,13 +70,13 @@
 			"response": []
 		},
 		{
-			"name": "Matches/{id} (OK)",
+			"name": "Matches/{id}",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n         \"id\":{{matchId}},\r\n        \"description\": \"OSFP-PAOK\",\r\n        \"matchDate\": \"2021-05-19\",\r\n        \"matchTime\": \"12:00\",\r\n        \"teamA\": \"OSFP\",\r\n        \"teamB\": \"PAOK\"\r\n    }",
+					"raw": "  {\r\n         \"id\":{{matchId}},\r\n        \"description\": \"OSFP-PAOK\",\r\n        \"matchDate\": \"2021-05-19\",\r\n        \"matchTime\": \"12:00\",\r\n        \"teamA\": \"OSFP\",\r\n        \"teamB\": \"PAOK\",\r\n        \"sport\":1\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -98,7 +98,7 @@
 			"response": []
 		},
 		{
-			"name": "Matches{id} (OK)",
+			"name": "Matches{id}",
 			"request": {
 				"method": "DELETE",
 				"header": [],
