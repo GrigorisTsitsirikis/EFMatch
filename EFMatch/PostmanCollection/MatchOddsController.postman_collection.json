@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "1f88166b-0177-41a5-9d5a-f902df31270c",
+		"name": "MatchOddsController",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MatchOdds (OK)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/MatchOdds",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"MatchOdds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MatchOdds/{id} (OK)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/MatchOdds/{{matchOddsId}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"MatchOdds",
+						"{{matchOddsId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MatchOdds",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"matchId\": 1038,\r\n        \"specifier\": \"X\",\r\n        \"odd\": 1.2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/MatchOdds",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"MatchOdds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MatchOdds/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": {{matchOddsId}},\r\n        \"matchId\": {{matchId}},\r\n        \"specifier\": \"X\",\r\n        \"odd\": 1.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/MatchOdds/{{matchOddsId}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"MatchOdds",
+						"{{matchOddsId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MatchOdds/{id} (OK)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/MatchOdds/{{matchOddsId2}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"MatchOdds",
+						"{{matchOddsId2}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -16,4 +16,8 @@
   <ItemGroup>
     <ProjectReference Include="..\EFDataLibrary\EFDataLibrary.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="PostmanCollection\" />
+  </ItemGroup>
 </Project>
