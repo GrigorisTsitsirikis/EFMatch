@@ -31,11 +31,11 @@ This controller has 5 endpoints for CRUD operations in table Match:
 This controller has 5 endpoints for CRUD operations in table MatchOdds:  
 
 **MatchOddsController**
-* /api/MatchOdds/{{matchOddsId}} (GET)
 * /api/MatchOdds (GET)
+* /api/MatchOdds/{{matchOddsId}} (GET)
 * /api/MatchOdds (POST)
-* /api/MatchOdds (PUT)
-* /api/MatchOdds (DELETE)
+* /api/MatchOdds/{{matchOddsId}} (PUT)
+* /api/MatchOdds/{{matchOddsId2}} (DELETE)
 
 # MatchController
 
