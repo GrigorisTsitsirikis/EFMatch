@@ -272,15 +272,26 @@ Returns All matchOdds that are stored in MatchOdds table.
 
 For the initial 3 gameOdds added.
 ```json
-{
-   
+[
+    {
+        "id": 2055,
+        "matchId": 2048,
+        "specifier": "2",
+        "odd": 2.00
     },
     {
-
+        "id": 2056,
+        "matchId": 2048,
+        "specifier": "X",
+        "odd": 1.50
     },
-     {
-
+    {
+        "id": 2057,
+        "matchId": 2048,
+        "specifier": "1",
+        "odd": 1.10
     }
+]
 ```
 When all gameOdds have been deleted. It returns an empty List.
 ```json
@@ -296,7 +307,7 @@ When all gameOdds have been deleted. It returns an empty List.
  public async Task<ActionResult<MatchOdds>> GetMatchOdds(int id)
 ```
 **Description**
-Returns a specific match based on the matchOdds id in the url.
+Returns a specific matchOdds based on the matchOdds id in the url.
 
 **URL** : `/api/MatchOdds/{id}`  
 
@@ -309,7 +320,10 @@ Returns a specific match based on the matchOdds id in the url.
 For **URL** : `/api/MatchOdds/2055`
 ```json
 {
-      
+        "id": 2055,
+        "matchId": 2048,
+        "specifier": "2",
+        "odd": 2.00
     }
 ```
 When all games have been deleted.
@@ -328,7 +342,7 @@ When all games have been deleted.
   public async Task<ActionResult<MatchOdds>> PostMatchOdds(MatchOdds MatchOdds)
 ```
 **Description**
-Creates a new Match  
+Creates  new Match Odds
 
 **URL** : `/api/MatchOdds`  
 
@@ -342,7 +356,7 @@ For **URL** : `/api/MatchOdds`
 ```json
 {
         "matchId": 2050,
-        "specifier": "1",
+        "specifier": "X",
         "odd": 1.2
     }
 ```
@@ -350,7 +364,10 @@ For **URL** : `/api/MatchOdds`
 **Code** : `201 Created`
 ```json
 {
-
+    "id": 2058,
+    "matchId": 2050,
+    "specifier": "X",
+    "odd": 1.2
 }
 ```
 ## Fail Response
@@ -407,7 +424,7 @@ We have a fail Response.
 ```
 public async Task<IActionResult> DeleteMatchOdds(int id)
 ```
-Updates the data of an existing match
+Deletes the MatchOdds for specific MatchOddsId
 **URL** : `/api/MatchOdds/{id}`  
 
 **Method** : `DELETE`  
