@@ -14,7 +14,7 @@ CREATE TABLE [dbo].[MatchOdds] (
     [ID]        INT          IDENTITY (1, 1) NOT NULL,
     [MatchId]   INT          NOT NULL,
     [Specifier] NVARCHAR (1) NOT NULL,
-    [Odd]       REAL         NOT NULL,
+    [Odd]       DECIMAL (18, 2) NOT NULL,
     CONSTRAINT [PK_MatchOdds] PRIMARY KEY CLUSTERED ([ID] ASC),
     CONSTRAINT [FK_MatchOdds_Match_MatchId] FOREIGN KEY ([MatchId]) REFERENCES [dbo].[Match] ([ID]) ON DELETE CASCADE
 );
