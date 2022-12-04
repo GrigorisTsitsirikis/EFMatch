@@ -5,6 +5,14 @@ The solution has 2 projects :
 **EFMatch** : A .net Core 3.1 web api project that has all the API functionality.
 
 
+**Project Instructions** 
+
+1) We clone the project from Visual Studio.  
+2) We build the Project. If it shows 2 errors there are 2 packages that missing locally. We run the command **dot net restore** and it will give us some assets in file /obj 
+3) We check the connection string in Appsettings in order to create the database in sql server.  
+4) We open Package manager console terminal in visual studio and we run the command **Update-Database** in order to create and update the final database including all migration scripts. The database will have the format that is described in file Final EF after migrations.sql  
+5) We run the program in debug mode + IIS Express option and we start making calls via postman.
+
 **EFMatch Project**
 The project when it's first created it creates the matchDB database locally if it doesn't already exist in the connection string specified in the appSettings along with the initial EF Model. There are some migration scripts that change the model a bit with Add-migration {name} and Update-Database commands so it is finalized. The initial produced script and the final after the migrations, have been uploaded in the EFDataLibrary Project. Finally there are some initialData that are loaded if the db data are empty for Matches and MatchOdds that can also get deleted by the functionallity of the project.
 There is also Swagger and Postman Collection in the project.
@@ -272,15 +280,26 @@ Returns All matchOdds that are stored in MatchOdds table.
 
 For the initial 3 gameOdds added.
 ```json
-{
-   
+[
+    {
+        "id": 2055,
+        "matchId": 2048,
+        "specifier": "2",
+        "odd": 2.00
     },
     {
-
+        "id": 2056,
+        "matchId": 2048,
+        "specifier": "X",
+        "odd": 1.50
     },
-     {
-
+    {
+        "id": 2057,
+        "matchId": 2048,
+        "specifier": "1",
+        "odd": 1.10
     }
+]
 ```
 When all gameOdds have been deleted. It returns an empty List.
 ```json
@@ -296,7 +315,7 @@ When all gameOdds have been deleted. It returns an empty List.
  public async Task<ActionResult<MatchOdds>> GetMatchOdds(int id)
 ```
 **Description**
-Returns a specific match based on the matchOdds id in the url.
+Returns a specific matchOdds based on the matchOdds id in the url.
 
 **URL** : `/api/MatchOdds/{id}`  
 
@@ -309,7 +328,10 @@ Returns a specific match based on the matchOdds id in the url.
 For **URL** : `/api/MatchOdds/2055`
 ```json
 {
-      
+        "id": 2055,
+        "matchId": 2048,
+        "specifier": "2",
+        "odd": 2.00
     }
 ```
 When all games have been deleted.
@@ -328,7 +350,7 @@ When all games have been deleted.
   public async Task<ActionResult<MatchOdds>> PostMatchOdds(MatchOdds MatchOdds)
 ```
 **Description**
-Creates a new Match  
+Creates  new Match Odds
 
 **URL** : `/api/MatchOdds`  
 
@@ -342,7 +364,7 @@ For **URL** : `/api/MatchOdds`
 ```json
 {
         "matchId": 2050,
-        "specifier": "1",
+        "specifier": "X",
         "odd": 1.2
     }
 ```
@@ -350,7 +372,10 @@ For **URL** : `/api/MatchOdds`
 **Code** : `201 Created`
 ```json
 {
-
+    "id": 2058,
+    "matchId": 2050,
+    "specifier": "X",
+    "odd": 1.2
 }
 ```
 ## Fail Response
@@ -407,7 +432,7 @@ We have a fail Response.
 ```
 public async Task<IActionResult> DeleteMatchOdds(int id)
 ```
-Updates the data of an existing match
+Deletes the MatchOdds for specific MatchOddsId
 **URL** : `/api/MatchOdds/{id}`  
 
 **Method** : `DELETE`  
